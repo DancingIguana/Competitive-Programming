@@ -1,17 +1,25 @@
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
 #define ll long long
 
+
 int main() {
-	ll n;
-	ll numbers[n];
-	for(ll i = 0; i < n; i++) {
-		cin >> numbers[i];
+	int n;
+	cin >> n;
+	int coins[n];
+	for(int i = 0; i < n; i++) {
+		cin >> coins[i];
 	}
-	sort(numbers, numbers+n);
-	ll sum = 0,
-	for()
+	
+	sort(coins, coins + n);
+	ll res = 1;
+	for(int i = 0; i < n && coins[i] <= res; i++) {
+		res += coins[i];
+	}
+
+	cout << res;
 	return 0;
 }
